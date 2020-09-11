@@ -1,0 +1,5 @@
+1 ： 压缩算法
+     tagBitmap.compress(focusAlpha ? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG, 60, stream);
+2：  压缩尺寸
+    BitmapFactory.Options options = new BitmapFactory.Options();
+    options.inSampleSize = computeSize();
