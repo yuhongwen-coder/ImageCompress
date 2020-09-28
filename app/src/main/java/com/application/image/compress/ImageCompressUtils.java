@@ -38,6 +38,7 @@ public class ImageCompressUtils {
                 .setRenameListener(new OnRenameListener() {
                     @Override
                     public String rename(String filePath) {
+                        Log.e(TAG,"setRenameListener。。。。");
                         return finalReFileName;
                     }
                 })
@@ -45,6 +46,7 @@ public class ImageCompressUtils {
                 .filter(new CompressionPredicate() {
                     @Override
                     public boolean apply (String path){
+                        Log.e(TAG,"apply。。。。");
                         return !(TextUtils.isEmpty(path) || path.toLowerCase().endsWith(".gif"));
                     }
                 }).setCompressListener(new OnCompressListener() {
@@ -58,7 +60,7 @@ public class ImageCompressUtils {
             public void onSuccess (File file){
                 // TODO 压缩成功后调用，返回压缩后的图片文件
                 Toast.makeText(context,"压缩成功 = " + (file.listFiles() == null ? "file is null": file.listFiles().length),Toast.LENGTH_SHORT).show();
-                Log.e(TAG,"压缩后成功。。。。");
+                Log.e(TAG," 压缩成功  file = " + file);
             }
 
             @Override

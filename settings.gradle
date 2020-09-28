@@ -1,2 +1,7 @@
+include ':lib_thread'
+include ':lib_imagecompress'
+include ':lib_intentService'
+include ':lib_websocket'
+include ':lib_log'
 include ':app'
 rootProject.name = "ImageCompress"

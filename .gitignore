@@ -12,3 +12,4 @@
 /captures
 .externalNativeBuild
 .cxx
+/lib_websocket/src/main/java/com/application/image/lib_websocket/RxWebSocket-1.x/.gitignore

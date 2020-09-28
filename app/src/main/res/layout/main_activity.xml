@@ -17,4 +17,12 @@
         android:layout_height="wrap_content"
         android:textSize="50dp"
         android:text="压缩图片"/>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:id="@+id/jump_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:text="跳转log"/>
 </LinearLayout>
