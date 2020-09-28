@@ -35,7 +35,7 @@ import java.util.concurrent.TimeUnit;
  *    通过线程池执行一个Callable或Thread执行一个FutureTask，拿到一个Future，调用future的get()方法，此方法会阻塞，直到返回线程执行完毕，具体用法见 http://blog.csdn.net/joenqc/article/details/76333935
  *    使用Executors.newSingleThreadExecutor，顺序提交两个任务
  */
-public class TestDemo {
+public class TestCountDownLatchDemo {
     private static final int MAX_INTEGER = 10000;
     private static CountDownLatch countDownLatch = new CountDownLatch(MAX_INTEGER);
     private static BlockingDeque<Integer> bo = new LinkedBlockingDeque<>();

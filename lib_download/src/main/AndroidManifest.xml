@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.application.image.lib_download">
+    <application>
+
+        <activity
+            android:name=".test.MainActivity">
+
+        </activity>
+
+        <activity
+            android:name=".test.ListActivity">
+        </activity>
+
+        <service
+            android:name=".core.DownloadService">
+
+        </service>
+    </application>
+
+</manifest>

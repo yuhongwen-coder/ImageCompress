@@ -17,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.application.image.lib_download.test.ListActivity;
+import com.application.image.lib_download.test.MainActivity;
 import com.application.image.lib_log.LogUtilsActivity;
 
 import java.io.ByteArrayOutputStream;
@@ -33,7 +35,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
  * Created by yuhongwen
  * on 2020/9/10
  */
-public class DemoActivity extends AppCompatActivity {
+public class DemoActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "DemoActivity";
     private TextView compressImage;
     private List<String> listImagePath;
@@ -45,10 +47,13 @@ public class DemoActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE},1);
+        requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_NETWORK_STATE,Manifest.permission.INTERNET},1);
         compressImage = findViewById(R.id.compress_image);
         jumpLog = findViewById(R.id.jump_log);
         showImage = findViewById(R.id.show_image);
+        findViewById(R.id.jump_download).setOnClickListener(this);
+        findViewById(R.id.jump_download_multi_app).setOnClickListener(this);
         jumpLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,5 +130,19 @@ public class DemoActivity extends AppCompatActivity {
         showImage.setImageBitmap(bitmap);
 
 //        Bitmap tagBitmap = BitmapFactory.decodeStream(srcImg.open(), null, BitmapFactory.Options);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        Intent intent = new Intent();
+        if (id ==R.id.jump_download) {
+            intent.setClass(this, MainActivity.class);
+            startActivity(intent);
+        } else if (id ==R.id.jump_download_multi_app) {
+            intent.setClass(this, ListActivity.class);
+            startActivity(intent);
+        }
     }
 }
