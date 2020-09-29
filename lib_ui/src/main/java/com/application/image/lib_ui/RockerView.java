@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
  * on 2020/9/29
  */
 public class RockerView extends View {
+
     public RockerView(Context context) {
         super(context);
     }
