@@ -11,6 +11,9 @@
             android:name=".test.ListActivity">
         </activity>
 
+        <activity
+            android:name=".test.DownLoadMoudelActivity"/>
+
         <service
             android:name=".core.DownloadService">
 

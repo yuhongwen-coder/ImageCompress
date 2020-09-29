@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.application.image.lib_download.test.DownLoadMoudelActivity;
 import com.application.image.lib_download.test.ListActivity;
 import com.application.image.lib_download.test.MainActivity;
 import com.application.image.lib_log.LogUtilsActivity;
@@ -51,8 +52,6 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
                 Manifest.permission.ACCESS_NETWORK_STATE,Manifest.permission.INTERNET},1);
         compressImage = findViewById(R.id.compress_image);
         jumpLog = findViewById(R.id.jump_log);
-        showImage = findViewById(R.id.show_image);
-        findViewById(R.id.jump_download).setOnClickListener(this);
         findViewById(R.id.jump_download_multi_app).setOnClickListener(this);
         jumpLog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,11 +136,8 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         int id = v.getId();
         Intent intent = new Intent();
-        if (id ==R.id.jump_download) {
-            intent.setClass(this, MainActivity.class);
-            startActivity(intent);
-        } else if (id ==R.id.jump_download_multi_app) {
-            intent.setClass(this, ListActivity.class);
+        if (id ==R.id.jump_download_multi_app) {
+            intent.setClass(this, DownLoadMoudelActivity.class);
             startActivity(intent);
         }
     }
