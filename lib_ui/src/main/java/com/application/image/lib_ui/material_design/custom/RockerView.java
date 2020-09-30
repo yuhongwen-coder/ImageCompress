@@ -1,4 +1,4 @@
-package com.application.image.lib_ui;
+package com.application.image.lib_ui.material_design.custom;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -1,4 +1,4 @@
-package com.application.image.lib_ui.material_design;
+package com.application.image.lib_ui.material_design.appbar;
 
 import android.os.Bundle;
 

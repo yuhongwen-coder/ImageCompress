@@ -1,10 +1,13 @@
 package com.application.image.lib_thread;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -12,34 +15,44 @@ import java.util.concurrent.LinkedBlockingDeque;
 /**
  * Created by yuhongwen
  * on 2020/9/28
+ *   handler 用于在 主线程放数据，子线程处理数据，然后将处理好的数据，发送给主线程
  */
-public class TestHandlerDemo {
+public class TestHandlerDemoActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.handler_layout);
+        putData();
+    }
+
     private static final int INIT_SIZE = 10;
     private static BlockingDeque<String> blockingDeque = new LinkedBlockingDeque(INIT_SIZE);
     private static MyHandler handler = new MyHandler();
 
-    public static void main(String[] args) {
-        putData();
-    }
 
     private static void putData() {
-        for (int i= 0;i<100;i++) {
+        for (int i= 0;i<20;i++) {
             try {
                 blockingDeque.put(String.valueOf(i));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            try {
-                getAndDealData();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if (blockingDeque.size() >= 10) {
+                try {
+                    getAndDealData();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
+        System.out.println("putData = " + blockingDeque.size());
     }
 
     private static void getAndDealData() throws InterruptedException {
         String value = blockingDeque.take();
         MyRunnable runnable = new MyRunnable();
+        runnable.setData(value);
         new Thread(runnable).start();
     }
 
@@ -51,8 +64,8 @@ public class TestHandlerDemo {
         public void run() {
             // 模拟耗时操作
             try {
-                Thread.sleep(3000);
-                i = i + "0";
+                System.out.println("MyRunnable thradName = " + Thread.currentThread().getName() + "--i = " + i);
+                Thread.sleep(1000);
                 Message message = handler.obtainMessage();
                 message.what = 0;
                 message.arg1 = Integer.parseInt(i);
@@ -60,7 +73,6 @@ public class TestHandlerDemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
         }
 
         public void setData(String string) {
@@ -74,7 +86,7 @@ public class TestHandlerDemo {
         }
 
         public MyHandler() {
-
+            super();
         }
 
         @Override

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MySwipRefreshLayout">
+        <attr
+            name="swip_backgroud" format="color|reference">
+        </attr>
+        <attr
+            name="swip_colour" format="color">
+        </attr>
+    </declare-styleable>
+</resources>

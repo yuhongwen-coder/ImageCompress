@@ -21,6 +21,8 @@ import com.application.image.lib_download.test.DownLoadMoudelActivity;
 import com.application.image.lib_download.test.ListActivity;
 import com.application.image.lib_download.test.MainActivity;
 import com.application.image.lib_log.LogUtilsActivity;
+import com.application.image.lib_thread.TestHandlerDemoActivity;
+import com.application.image.lib_ui.UiDemoActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -51,6 +53,8 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
         requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.ACCESS_NETWORK_STATE,Manifest.permission.INTERNET},1);
         compressImage = findViewById(R.id.compress_image);
+        findViewById(R.id.jump_ui).setOnClickListener(this);
+        findViewById(R.id.jump_handler).setOnClickListener(this);
         jumpLog = findViewById(R.id.jump_log);
         findViewById(R.id.jump_download_multi_app).setOnClickListener(this);
         jumpLog.setOnClickListener(new View.OnClickListener() {
@@ -137,8 +141,14 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
         Intent intent = new Intent();
         if (id ==R.id.jump_download_multi_app) {
-            intent.setClass(this, DownLoadMoudelActivity.class);
-            startActivity(intent);
+//            intent.setClass(this, DownLoadMoudelActivity.class);
+            intent.setClassName(this, "com.application.image.lib_download.test.DownLoadMoudelActivity");
+        } else if (id == R.id.jump_handler) {
+//            intent.setClassName(this,"com.application.image.lib_thread.TestHandlerDemoActivity");
+            intent.setClass(this, TestHandlerDemoActivity.class);
+        } else if (id == R.id.jump_ui) {
+            intent.setClass(this, UiDemoActivity.class);
         }
+        startActivity(intent);
     }
 }

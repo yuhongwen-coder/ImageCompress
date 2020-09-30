@@ -7,8 +7,8 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.application.image.lib_ui.material_design.RecylerViewTabActivity;
-import com.application.image.lib_ui.material_design.SwipeRefreshLayoutActivity;
+import com.application.image.lib_ui.material_design.recylerview.RecylerViewTabActivity;
+import com.application.image.lib_ui.material_design.swip.SwipeRefreshLayoutActivity;
 
 /**
  * Created by yuhongwen

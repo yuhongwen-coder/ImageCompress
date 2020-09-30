@@ -1,9 +1,28 @@
-1 : 12个Material Design风格控件的使用
-项目在GitHub上的地址：
+1 : 12个 Material Design 风格控件的使用
+   项目在GitHub上的地址：
+   https://github.com/Hebin320/MaterialDesignUse
 
-https://github.com/Hebin320/MaterialDesignUse
+   CSDN上的下载地址
+   http://download.csdn.net/detail/hebin320320/9658215
 
-CSDN上的下载地址
+2: https://blog.csdn.net/smile_Running/article/details/97113256
+   通过 Material Design 打造精美的ui 体验
+   Material Design 之一 BottomNavigationView + ViewPager + Fragment 仿微信底部导航效果
 
-http://download.csdn.net/detail/hebin320320/9658215
+   Material Design 之二 Toolbar + DrawerLayout + NavigationView 实现QQ侧拉抽屉效果
+
+   Material Design 之三 TabLayout + ViewPager + Fragment 今日头条标题切换效果
+
+   Material Design 之四 SwipeRefreshLayout + CardView + RecyclerView 精美瀑布流效果
+
+   Material Design 之五 CoordinatorLayout + AppBarLayout 提供最佳浏览体验
+
+   Material Design 之六 CollapsingToolbarLayout + FloatingActionButton 打造精美详情界面
+
+   Material Design 之七 TextInputLayout+TextInputEditText 打造精美的登录界面
+
+3:
+  3-1 自定义View 在XML 中 设置 命名空间
+  3-2 在JAVA 文件中：获取xml 设置的 属性
+  3-3 在Java 文件中，改变 属性值
 

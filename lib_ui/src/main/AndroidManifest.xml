@@ -5,7 +5,7 @@
         <activity
             android:name=".UiDemoActivity"/>
         <activity
-            android:name=".material_design.RecylerViewTabActivity"/>
-        <activity android:name=".material_design.SwipeRefreshLayoutActivity"/>
+            android:name=".material_design.recylerview.RecylerViewTabActivity"/>
+        <activity android:name=".material_design.swip.SwipeRefreshLayoutActivity"/>
     </application>
 </manifest>
