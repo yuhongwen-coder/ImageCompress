@@ -64,9 +64,22 @@
         android:text="ui"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintLeft_toLeftOf="@id/jump_log"
         app:layout_constraintRight_toRightOf="@id/jump_log"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <TextView
+        android:id="@+id/jump_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转数据库Demo"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintLeft_toLeftOf="@id/jump_download_multi_app"
+        app:layout_constraintRight_toRightOf="@id/jump_download_multi_app"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.113" />
 </androidx.constraintlayout.widget.ConstraintLayout>
