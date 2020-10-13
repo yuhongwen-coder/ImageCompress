@@ -19,6 +19,8 @@ public class UiDemoActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ui_demo_activity);
+        findViewById(R.id.swiprehresh_demo).setOnClickListener(this);
+        findViewById(R.id.recylerview_demo).setOnClickListener(this);
     }
 
     @Override

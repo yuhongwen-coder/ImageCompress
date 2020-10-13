@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="text_red">#ff0000</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="fun_state_off">#8b8b8b</color>
+    <color name="fun_state_warn">#d65f35</color>
+    <color name="fun_state_normal">#17922f</color>
+    <color name="break11">#111111</color>
+    <color name="text_13">#DDDDDD</color>
+    <color name="main_color1">#1c2234</color>
+    <color name="main_color2">#333a4e</color>
+    <color name="main_color3">#293046</color>
+    <color name="green">#00FF00</color>
+    <color name="red">#FF0000</color>
 </resources>

@@ -80,7 +80,7 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
 //                    ImageCompressUtils.compressImage(DemoActivity.this, srcImagePath, destImagePath);
 //                }
 ////                String srcImagePath = listImagePath.get(2);+
-
+                //  /storage/emulated/0/Robot2
                 String srcImagePath = Environment.getExternalStorageDirectory() + "/" + "Robot2"+"/" + "alarm_dw";
 
                 String destImagePath = Environment.getExternalStorageDirectory() + "/" + "Robot2";

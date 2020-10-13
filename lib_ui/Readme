@@ -26,3 +26,8 @@
   3-2 在JAVA 文件中：获取xml 设置的 属性
   3-3 在Java 文件中，改变 属性值
 
+4：
+  List<FACE_LIST_DATA_Test> dataList = gson.fromJson(whiteFace,  new TypeToken<List<FACE_LIST_DATA_Test>>(){
+          }.getType());
+   -----》Gson 将 jsonArray转变成 List 集合
+
