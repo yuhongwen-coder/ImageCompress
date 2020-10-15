@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/lib_log" />
             <option value="$PROJECT_DIR$/lib_thread" />
             <option value="$PROJECT_DIR$/lib_ui" />
+            <option value="$PROJECT_DIR$/moudel_RxJava" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

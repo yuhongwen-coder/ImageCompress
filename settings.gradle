@@ -1,3 +1,4 @@
+include ':moudel_RxJava'
 include ':lib_db'
 include ':lib_ui'
 include ':lib_download'

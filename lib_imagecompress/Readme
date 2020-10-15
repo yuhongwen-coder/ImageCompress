@@ -1,0 +1,30 @@
+从相册获取的 图片路径，然后将路径存入输入流---在通过流的运输将图片传递给另一端
+1-1 imagePath = /storage/emulated/0/Android/data/com.maxvision.tech.robot/cache/1602572346399.jpg
+1-2 InputStream is = new FileInputStream(imagePath)
+    byte[] data = new byte[is.available()];
+    is.read(data);
+    ----> data[191372] 数据大小字节数组
+1-3  String result = Base64.encodeToString(data,Base64.NO_CLOSE);
+    ----》最终变成通过Base64编码的字符串
+
+从网络中获取到客户端的流中的图片信息
+2-1 String imageResultBase64 = "iVBORw0KGgoAAAANSUhEUgAAAbsAAAJPCAIAAABq4O3bAAAAA3NCSVQICAjb4U/gAAAgAElEQVR4
+                                nOy925IkR5IldlTVzN0jIjOrCgV09/b0zixJkV1yRJYUvvGj+ER+Af+Bn8NHPlEonNmdFS53pm/o
+                                G4C65iUi/GKmqnywiEBWlXtWenUkMgvI0xBrwNLD3Nzc7LjeTI3+u/99Cxg0gwwfgJk/rARgWUf........"
+    byte[] decodeByte = Base64.decode(imageResultBase64,Base64.NO_CLOSE);
+    ----->获取Base64加密信息并解密出 图片的明文字节数组
+
+2-2  File f = new File(photoFile,fileName);
+     Strring photoFile = "/storage/emulated/0/Robot2/white_list";
+     String fileName = "w1602573357347.png";
+
+     FileOutputStream outputStream = new FileOutputStream(f);
+     BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream);
+     bufferedOutputStream.write(decodeByte);
+     bufferedOutputStream.flush();
+  ------》将字节信息写入到文件流中，文件流的建立是通过文件路径和文件的名称生成的，这样文件的路径就保存了图片信息
+          imagePath = "/storage/emulated/0/Robot2/white_list/w1602573357347.png"
+
+2-3 Glide.with(mContext).load(data.getImagePath()).apply(new RequestOptions()
+        .placeholder(R.drawable.ic_placeholder).diskCacheStrategy(DiskCacheStrategy.NONE)).into(viewHolder.ivFacelibPic);
+    -----> Gile通过  imagePath 路径将图片绘制到 控件上
