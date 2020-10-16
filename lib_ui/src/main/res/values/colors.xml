@@ -14,4 +14,6 @@
     <color name="main_color3">#293046</color>
     <color name="green">#00FF00</color>
     <color name="red">#FF0000</color>
+
+    <color name="md_material_blue_600">#1E88E5</color>
 </resources>

@@ -33,6 +33,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'top.zibin:Luban:1.1.8'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
 }

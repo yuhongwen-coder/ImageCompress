@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.application.image.lib_ui.material_design.recylerview.RecylerViewTabActivity;
 import com.application.image.lib_ui.material_design.swip.SwipeRefreshLayoutActivity;
+import com.application.image.lib_ui.material_design.viewpager.ViewPagerDemoActivity;
 
 /**
  * Created by yuhongwen
@@ -21,6 +22,7 @@ public class UiDemoActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.ui_demo_activity);
         findViewById(R.id.swiprehresh_demo).setOnClickListener(this);
         findViewById(R.id.recylerview_demo).setOnClickListener(this);
+        findViewById(R.id.viewpager_demo).setOnClickListener(this);
     }
 
     @Override
@@ -31,6 +33,8 @@ public class UiDemoActivity extends AppCompatActivity implements View.OnClickLis
             intent.setClass(this, SwipeRefreshLayoutActivity.class);
         } else if (id ==R.id.recylerview_demo) {
             intent.setClass(this, RecylerViewTabActivity.class);
+        } else if (id ==R.id.viewpager_demo) {
+            intent.setClass(this, ViewPagerDemoActivity.class);
         }
         startActivity(intent);
     }

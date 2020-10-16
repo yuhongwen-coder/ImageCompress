@@ -3,8 +3,11 @@ package com.application.image.lib_ui.utils;
 import android.app.Application;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by yuhongwen
@@ -44,5 +47,37 @@ public class AssetsSourceUtils {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     *  测试函数
+     * @param strPath
+     * @return
+     */
+    public static List<String> getPicturesTest(final String strPath) {
+        List<String> list = new ArrayList<String>();
+        File file = new File(strPath);
+        File[] allfiles = file.listFiles();
+        if (allfiles == null) {
+            return null;
+        }
+        for(int i = 0; i < allfiles.length; i++) {
+            final File fi = allfiles[i];
+            if(fi.isFile()) {
+                int idx = fi.getPath().lastIndexOf(".");
+                if (idx <= 0) {
+                    continue;
+                }
+                String suffix = fi.getPath().substring(idx);
+                if (suffix.toLowerCase().equals(".jpg") ||
+                        suffix.toLowerCase().equals(".jpeg") ||
+                        suffix.toLowerCase().equals(".bmp") ||
+                        suffix.toLowerCase().equals(".png") ||
+                        suffix.toLowerCase().equals(".gif") ) {
+                    list.add(fi.getPath());
+                }
+            }
+        }
+        return list;
     }
 }
