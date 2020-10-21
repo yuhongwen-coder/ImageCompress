@@ -25,9 +25,23 @@
   3-1 自定义View 在XML 中 设置 命名空间
   3-2 在JAVA 文件中：获取xml 设置的 属性
   3-3 在Java 文件中，改变 属性值
+  3-4 详细步骤
+    1、首先需要写一个类来继承自View(或者View的子类)
+    2、需要得到view的对象(并初始化变量)，那么需要重写构造方法，其中一参的构造方法用于new，二参的构造方法用于xml布局文件使用，三参的构造方法可以传入一个样式。
+    3、需要设置view的大小，那么需要重写onMeasure方法
+    4、需要设置view的位置，那么需要重写onLayout方法，但是这个方法在自定义view的时候用的不多，原因主要在于view的位置主要是由父控件来决定
+    5、需要绘制出所需要显示的view，那么需要重写onDraw方法
+    6、当控件状态改变的时候，需要重绘view，那么调用invalidate();方法，这个方法实际上会重新调用onDraw方法
+    7、在这其中，如果需要对view设置点击事件，可以直接调用setOnClickListener方法
+    8、需要实现触摸拖拽功能，那么需要重写的onTouchEvent方法，基本上是处理ACTION_DOWN、ACTION_MOVE和ACTION_UP事件。
+    8、在布局中使用此自定义控件
 
 4：
   List<FACE_LIST_DATA_Test> dataList = gson.fromJson(whiteFace,  new TypeToken<List<FACE_LIST_DATA_Test>>(){
           }.getType());
    -----》Gson 将 jsonArray转变成 List 集合
+
+5：RecylerView 不能刷新数据
+  5-1 ： 没有设置 LayoutManager
+  5-2 : getCount() 函数等于0
 

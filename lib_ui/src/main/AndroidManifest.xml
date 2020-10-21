@@ -8,5 +8,6 @@
             android:name=".material_design.recylerview.RecylerViewTabActivity"/>
         <activity android:name=".material_design.swip.SwipeRefreshLayoutActivity"/>
         <activity android:name=".material_design.viewpager.ViewPagerDemoActivity"/>
+        <activity android:name=".material_design.popupwindow.PopupWindowDemoActivity"/>
     </application>
 </manifest>

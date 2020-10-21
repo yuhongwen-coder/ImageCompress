@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.application.image.lib_ui.material_design.popupwindow.PopupWindowDemoActivity;
 import com.application.image.lib_ui.material_design.recylerview.RecylerViewTabActivity;
 import com.application.image.lib_ui.material_design.swip.SwipeRefreshLayoutActivity;
 import com.application.image.lib_ui.material_design.viewpager.ViewPagerDemoActivity;
@@ -23,6 +24,7 @@ public class UiDemoActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.swiprehresh_demo).setOnClickListener(this);
         findViewById(R.id.recylerview_demo).setOnClickListener(this);
         findViewById(R.id.viewpager_demo).setOnClickListener(this);
+        findViewById(R.id.popupwindow_demo).setOnClickListener(this);
     }
 
     @Override
@@ -35,6 +37,8 @@ public class UiDemoActivity extends AppCompatActivity implements View.OnClickLis
             intent.setClass(this, RecylerViewTabActivity.class);
         } else if (id ==R.id.viewpager_demo) {
             intent.setClass(this, ViewPagerDemoActivity.class);
+        } else if (id ==R.id.popupwindow_demo) {
+            intent.setClass(this, PopupWindowDemoActivity.class);
         }
         startActivity(intent);
     }
