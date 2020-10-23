@@ -1,3 +1,23 @@
 1 : 使用注册回调 返回的结果
 
 2： 使用RxJava 来
+
+3: 理解这样的代码
+   private static void pingBaidu() {
+           if (disposable != null && !disposable.isDisposed()) {
+               disposable.dispose();
+           }
+           disposable = Observable.create((ObservableOnSubscribe<Boolean>) emitter -> {
+               emitter.onNext(PingUtil.ping("www.alibaba.com"));
+               emitter.onComplete();
+           }).subscribeOn(Schedulers.io()).map(aBoolean -> {
+               if (aBoolean) return true;
+               return PingUtil.ping("www.baidu.com");
+           }).subscribeOn(Schedulers.io()).map(aBoolean -> {
+               if (aBoolean) return true;
+               return PingUtil.ping("www.qq.com");
+           }).subscribeOn(Schedulers.io()).observeOn(Schedulers.io())
+                   .subscribe(aBoolean -> {
+                       isNetworkConnect = aBoolean;
+                   });
+       }

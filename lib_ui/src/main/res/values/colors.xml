@@ -18,5 +18,25 @@
     <color name="md_material_blue_600">#1E88E5</color>
     <color name="black_50">#808080</color>
 
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_897EFF">#897EFF</color>
+    <color name="color_43C4C5">#43C4C5</color>
+
+    <color name="gray_d7">#d7d7d7</color>
+    <color name="gray_c4">#c4c4c4</color>
+
+    <color name="text_1">#111111</color>
+
+    <color name="blue_32">#3280e5</color>
+    <color name="black_21">#212121</color>
+
+    <color name="gray_b1">#b1b1b1</color>
+
+    <color name="gray_8a">#8a92aa</color>
+
+    <color name="bg_main">#2d3448</color>
+    <color name="bg_main_title">#373f56</color>
 
 </resources>

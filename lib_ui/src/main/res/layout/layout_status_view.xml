@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70px">
+
+    <TextView
+        android:id="@+id/tv_net"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="60px"
+        android:text="@string/net"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+    <ImageView
+        android:id="@+id/iv_net"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20px"
+        android:layout_toRightOf="@id/tv_net"
+        android:src="@drawable/ic_net_none" />
+
+    <TextView
+        android:id="@+id/net_speed"
+        tools:text="1200.0 kb/s"
+        android:textSize="19.5sp"
+        android:textColor="@color/white"
+        android:layout_toEndOf="@id/iv_net"
+        android:gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_battery"
+        tools:text="20%"
+        tools:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="60px"
+        android:layout_toRightOf="@id/net_speed"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+    <ImageView
+        android:id="@+id/iv_battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20px"
+        android:layout_toRightOf="@id/tv_battery" />
+
+    <ImageView
+        android:id="@+id/iv_ros_error"
+        android:visibility="gone"
+        android:layout_toEndOf="@+id/iv_battery"
+        android:layout_marginStart="20dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_ros_error"
+        android:layout_width="45px"
+        android:layout_height="45px"/>
+
+    <ImageView
+        android:id="@+id/ic_net_error"
+        android:visibility="gone"
+        android:layout_toEndOf="@+id/iv_ros_error"
+        android:layout_marginStart="20dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_http_error"
+        android:layout_width="45px"
+        android:layout_height="45px"/>
+
+    <TextClock
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="60px"
+        android:format24Hour="yyyy-MM-dd HH:mm"
+        android:format12Hour="@null"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+<!--    <TextView-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="@dimen/sp_15"-->
+<!--        android:id="@+id/tv_date"-->
+<!--        android:layout_marginRight="60px"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+onMeasure() 函数要注意测量模式为：AT_MOST 或者 UNSPECIFIED 有可能造成控件的宽或者高是零
+@Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int myWidthSpecMode = MeasureSpec.getMode(widthMeasureSpec);
+        int myWidthSpecSize = MeasureSpec.getSize(widthMeasureSpec);
+        int myHeightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
+        int myHeightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
+
+        // 获取宽度
+        if (myWidthSpecMode == MeasureSpec.EXACTLY) {
+            // match_parent
+            mWidth = myWidthSpecSize;
+        } else {
+            // wrap_content
+            mWidth = DensityUtil.dip2px(mContext, 120);
+        }
+
+        // 获取高度
+        if (myHeightSpecMode == MeasureSpec.EXACTLY) {
+            mHeight = myHeightSpecSize;
+        } else {
+            // wrap_content
+            mHeight = DensityUtil.dip2px(mContext, 120);
+        }
+
+        // 设置该view的宽高
+        setMeasuredDimension((int) mWidth, (int) mHeight);
+    }

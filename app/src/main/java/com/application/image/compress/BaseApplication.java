@@ -17,11 +17,19 @@ import com.orhanobut.logger.PrettyFormatStrategy;
  */
 public class BaseApplication extends Application {
 
+    private static BaseApplication instance;
+
     @Override
     public void onCreate() {
         super.onCreate();
         initLog();
+        instance = this;
     }
+
+    public static synchronized BaseApplication getInstance() {
+        return instance;
+    }
+
 
     private void initLog() {
         FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()

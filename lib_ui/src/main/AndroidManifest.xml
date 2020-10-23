@@ -9,5 +9,6 @@
         <activity android:name=".material_design.swip.SwipeRefreshLayoutActivity"/>
         <activity android:name=".material_design.viewpager.ViewPagerDemoActivity"/>
         <activity android:name=".material_design.popupwindow.PopupWindowDemoActivity"/>
+        <activity android:name=".material_design.dialog.DialogActivity"/>
     </application>
 </manifest>

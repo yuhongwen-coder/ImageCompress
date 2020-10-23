@@ -1,4 +1,4 @@
-package com.application.image.lib_ui.material_design.fragment;
+package com.application.image.lib_ui.material_design.dialog;
 
 import android.app.Dialog;
 import android.os.Bundle;
