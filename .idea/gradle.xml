@@ -18,7 +18,7 @@
             <option value="$PROJECT_DIR$/lib_imagecompress" />
             <option value="$PROJECT_DIR$/lib_intentService" />
             <option value="$PROJECT_DIR$/lib_log" />
-            <option value="$PROJECT_DIR$/lib_okhttp" />
+            <option value="$PROJECT_DIR$/lib_network" />
             <option value="$PROJECT_DIR$/lib_thread" />
             <option value="$PROJECT_DIR$/lib_ui" />
             <option value="$PROJECT_DIR$/moudel_RxJava" />
