@@ -1,5 +1,12 @@
+20201030
 1 ： 压缩算法
      tagBitmap.compress(focusAlpha ? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG, 60, stream);
 2：  压缩尺寸
     BitmapFactory.Options options = new BitmapFactory.Options();
     options.inSampleSize = computeSize();
+
+3: RippleView 怎样既可以点击ImageView 也可以点击 后面的控件
+   通过拦截 onTouchEvent() 来分发事件
+   将 RippleView 和 ImageView 写成一个自定义控件
+4： 线程池实现
+5: crashLogReport

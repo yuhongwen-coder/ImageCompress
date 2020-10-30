@@ -24,6 +24,13 @@ public class BaseApplication extends Application {
         super.onCreate();
         initLog();
         instance = this;
+        initCrashLogToFile();
+    }
+
+    private void initCrashLogToFile() {
+        // 将Crash 日志保存到 手机sdcard中
+        CrashHandler crashHandler = CrashHandler.getInstance();
+        crashHandler.init(getApplicationContext());
     }
 
     public static synchronized BaseApplication getInstance() {

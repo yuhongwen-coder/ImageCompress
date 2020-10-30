@@ -1,4 +1,4 @@
-onMeasure() 函数要注意测量模式为：AT_MOST 或者 UNSPECIFIED 有可能造成控件的宽或者高是零
+1  :  onMeasure() 函数要注意测量模式为：AT_MOST 或者 UNSPECIFIED 有可能造成控件的宽或者高是零
 @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -27,3 +27,15 @@ onMeasure() 函数要注意测量模式为：AT_MOST 或者 UNSPECIFIED 有可�
         // 设置该view的宽高
         setMeasuredDimension((int) mWidth, (int) mHeight);
     }
+
+2:  防止View一直在内存中，需要的时候先移除掉，然后在 parentView上添加子View
+   private void f1(){
+           SpreadView view = SpreadViewManager.get().getSpreadView();
+           ViewGroup parentView = (ViewGroup) view.getParent();
+           if(parentView != null){
+               parentView.removeView(view);
+           }
+           fl_v1.addView(view);
+           view.setMicColor(R.color.white);
+           view.startAnimator();
+       }

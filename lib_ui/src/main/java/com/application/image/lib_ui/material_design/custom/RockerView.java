@@ -23,6 +23,4 @@ public class RockerView extends View {
     public RockerView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
-
-
 }
