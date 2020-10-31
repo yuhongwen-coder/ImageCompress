@@ -59,4 +59,8 @@
             <enum name="mirror" value="2" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="arc_view">
+        <attr name="arc_color" format="color"/>
+    </declare-styleable>
 </resources>

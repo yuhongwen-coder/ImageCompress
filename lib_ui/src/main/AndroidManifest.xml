@@ -10,5 +10,6 @@
         <activity android:name=".material_design.viewpager.ViewPagerDemoActivity"/>
         <activity android:name=".material_design.popupwindow.PopupWindowDemoActivity"/>
         <activity android:name=".material_design.dialog.DialogActivity"/>
+        <activity android:name=".material_design.custom.CustomViewActivity"/>
     </application>
 </manifest>

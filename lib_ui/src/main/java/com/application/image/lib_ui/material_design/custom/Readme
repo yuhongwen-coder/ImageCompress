@@ -39,3 +39,6 @@
            view.setMicColor(R.color.white);
            view.startAnimator();
        }
+
+
+3 : 仿照微信播放语音动效
