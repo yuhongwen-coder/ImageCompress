@@ -1,4 +1,4 @@
-package com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.diff
+package com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.diff;
 
 import androidx.recyclerview.widget.ListUpdateCallback
 import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.BaseQuickAdapter

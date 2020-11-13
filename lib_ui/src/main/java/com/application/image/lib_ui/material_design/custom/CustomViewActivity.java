@@ -1,6 +1,7 @@
 package com.application.image.lib_ui.material_design.custom;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,5 +17,11 @@ public class CustomViewActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.custom_view_activity);
+        ImageView voicePlay = findViewById(R.id.voice_play);
+        playAudioAnimation(voicePlay);
+    }
+
+    private void playAudioAnimation(ImageView voicePlay) {
+
     }
 }

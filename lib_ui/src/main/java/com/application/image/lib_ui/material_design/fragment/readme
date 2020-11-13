@@ -1,0 +1,8 @@
+1 :2020-11-06 09:06:52.632 30785-30785/com.maxvision.fxlj E/yhw: fragment onCreateView
+   2020-11-06 09:06:52.815 30785-30785/com.maxvision.fxlj E/yhw: fragment onViewCreated
+   2020-11-06 09:06:52.815 30785-30785/com.maxvision.fxlj E/yhw: fragment onActivityCreated
+
+
+2 ：  Bundle extras = intent.getExtras();
+     fragment.setArguments(extras);
+     Bundle arguments = getArguments();

@@ -15,7 +15,7 @@ package com.application.image.lib_ui.material_design.recylerview.adapter.baserec
 */
 
 
-import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.entity.node.MultiItemEntity;
+import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.entity.MultiItemEntity;
 
 /**
  * 文 件 名: ClickEntity
