@@ -10,3 +10,12 @@
    将 RippleView 和 ImageView 写成一个自定义控件
 4： 线程池实现
 5: crashLogReport
+
+20201113
+1：FragmentPagerAdapter + Fragment
+
+2：Netty 网络传输
+
+3：Dispose
+   比如要实现这么一个需求：就是过一段时间执行某一段代码。除了定时器，还可以用这个Dispose功能
+

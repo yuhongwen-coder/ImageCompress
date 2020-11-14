@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -21,6 +23,7 @@ public class DisposableDemoActivity extends AppCompatActivity {
 
 
     private Disposable disposable;
+    private Disposable delayDisposable;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,6 +56,24 @@ public class DisposableDemoActivity extends AppCompatActivity {
                 .subscribe(new Consumer<Object>() {
                     @Override
                     public void accept(Object aBoolean) throws Exception {
+
+                    }
+                });
+    }
+
+    /**
+     * 实现了延时执行代码（任务功能）
+     */
+    private void delayExecuteTask() {
+        if (delayDisposable != null && !delayDisposable.isDisposed()) {
+            delayDisposable.dispose();
+        }
+        delayDisposable = Observable.timer(2,TimeUnit.MINUTES)
+                .observeOn(Schedulers.io())
+                .observeOn(Schedulers.io())
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
 
                     }
                 });

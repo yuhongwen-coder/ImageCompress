@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/lib_imagecompress" />
             <option value="$PROJECT_DIR$/lib_intentService" />
             <option value="$PROJECT_DIR$/lib_log" />
+            <option value="$PROJECT_DIR$/lib_netty" />
             <option value="$PROJECT_DIR$/lib_network" />
             <option value="$PROJECT_DIR$/lib_thread" />
             <option value="$PROJECT_DIR$/lib_ui" />
