@@ -1,12 +1,69 @@
 20201030
-1 ： 压缩算法
+1 ： 压缩算法 ---实现
      tagBitmap.compress(focusAlpha ? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG, 60, stream);
-2：  压缩尺寸
+2：  压缩尺寸 ----实现
     BitmapFactory.Options options = new BitmapFactory.Options();
     options.inSampleSize = computeSize();
 
-3: RippleView 怎样既可以点击ImageView 也可以点击 后面的控件
+3: RippleView 怎样既可以点击ImageView 也可以点击 后面的控件 ----未实现
    通过拦截 onTouchEvent() 来分发事件
+   将 RippleView 和 ImageView 写成一个自定义控件  ---- 未实现
+
+4： 线程池实现 -----未实现
+
+5: crashLogReport  ----实现
+
+20201031 （重点ui 组件 ： ViewPager tabLayout Menu Fragment Dialog DialogFragment RecylerView(及其扩展)）
+1： Fragment 结合Activity
+    一般Activity 结合Fragment+ TabLayout 的话，需要在Activity 的onCreate() 里面实例话 Fragment
+    Fragment 可以通过 ArrayList 来存储
+    Fragemnt 除了复写必要的函数之后，可以提供一个 newInstance(args) 函数
+    其中 args 就是 可以通过Activity 传递给  Fragment
+
+        /**
+         * Supply the construction arguments for this fragment.  This can only
+         * be called before the fragment has been attached to its activity; that
+         * is, you should call it immediately after constructing the fragment.  The
+         * arguments supplied here will be retained across fragment destroy and
+         * creation.
+         */
+    public static NotInterceptFragment newInstance(Bundle args) {
+            NotInterceptFragment fragment = new NotInterceptFragment();
+            fragment.setArguments(args);
+            return fragment;
+    }
+
+     /**  在 onAttach 里面绑定 activity 的上下文
+     * Called when a fragment is first attached to its context.
+     * {@link #onCreate(Bundle)} will be called after this.
+     */
+    @Override
+        public void onAttach(Context context) {
+            super.onAttach(context);
+            Log.i(TAG, "onAttach: ");
+            mActivity = (MainActivity) getActivity();
+
+        }
+
+2： 判断Activity是否位于栈顶
+   private boolean isTopActivity() {
+          ActivityManager activityManager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
+          List<ActivityManager.RunningTaskInfo> tasksInfo = activityManager.getRunningTasks(1);
+          if (tasksInfo.size() > 0) {
+              //应用程序位于堆栈的顶层
+              if (getPackageName().equals(tasksInfo.get(0).topActivity.getPackageName())) {
+                  return true;
+              }
+          }
+          return false;
+    }
+
+ 3： android hostName not verified -----》没有在认证服务器域名
+
+ 4: 而在的项目中我经常遇到这样的一个需求:如果用户上传了头像就显示圆形头像，如果没有上传头像就在圆形背景上显示文字。或者是直接在圆形头像上添加文字
+     https://blog.csdn.net/ys408973279/article/details/50350313/
+
+
    将 RippleView 和 ImageView 写成一个自定义控件
 4： 线程池实现
 5: crashLogReport

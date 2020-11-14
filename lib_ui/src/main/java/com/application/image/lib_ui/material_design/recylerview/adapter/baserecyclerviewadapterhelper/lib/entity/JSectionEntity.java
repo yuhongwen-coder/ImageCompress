@@ -1,8 +1,6 @@
 package com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.entity;
 
 
-import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.entity.node.SectionEntity;
-
 /**
  * 仅供java使用
  *

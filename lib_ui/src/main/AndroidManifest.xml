@@ -30,5 +30,6 @@
         <activity android:name=".activity.node.ChooseNodeUseTypeActivity" />
         <activity android:name=".activity.node.NodeTreeUseActivity" />
         <activity android:name=".activity.multi.BinderUseActivity" />
+        <activity android:name=".material_design.custom.CustomViewActivity"/>
     </application>
 </manifest>

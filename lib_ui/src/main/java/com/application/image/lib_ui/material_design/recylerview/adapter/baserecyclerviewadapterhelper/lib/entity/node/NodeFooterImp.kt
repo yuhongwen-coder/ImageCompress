@@ -1,4 +1,4 @@
-package com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.entity.node
+package com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.entity.node;
 
 /**
  * 如果需要，可以实现此接口，返回脚部节点

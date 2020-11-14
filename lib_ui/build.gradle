@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 30
@@ -23,6 +26,10 @@ android {
 
     buildFeatures {
         dataBinding = true
+    }
+
+    kapt {
+        generateStubs = true
     }
 }
 
@@ -49,5 +56,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.kyleduo.switchbutton:library:2.0.0'
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
 }

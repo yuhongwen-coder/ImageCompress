@@ -11,9 +11,9 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="60px"
-        android:text="@string/net"
+        android:text="网络"
         android:textColor="@color/white"
-        android:textSize="@dimen/sp_15" />
+        android:textSize="15dp" />
 
     <ImageView
         android:id="@+id/iv_net"
@@ -45,7 +45,7 @@
         android:layout_marginLeft="60px"
         android:layout_toRightOf="@id/net_speed"
         android:textColor="@color/white"
-        android:textSize="@dimen/sp_15" />
+        android:textSize="15dp" />
 
     <ImageView
         android:id="@+id/iv_battery"
@@ -85,7 +85,7 @@
         android:format24Hour="yyyy-MM-dd HH:mm"
         android:format12Hour="@null"
         android:textColor="@color/white"
-        android:textSize="@dimen/sp_15" />
+        android:textSize="15dp" />
 
 <!--    <TextView-->
 <!--        android:textColor="@color/white"-->

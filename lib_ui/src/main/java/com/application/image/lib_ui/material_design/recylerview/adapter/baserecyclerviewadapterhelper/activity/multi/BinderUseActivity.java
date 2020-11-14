@@ -48,10 +48,8 @@ public class BinderUseActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMultipleItemUseBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setTitle("BaseMultiItemQuickAdapter");
         setBackBtn();
-
         initRv();
     }
 

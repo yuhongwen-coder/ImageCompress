@@ -1,4 +1,4 @@
-package com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.diff
+package com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.diff;
 
 import android.os.Handler
 import android.os.Looper
