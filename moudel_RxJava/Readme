@@ -21,3 +21,8 @@
                        isNetworkConnect = aBoolean;
                    });
        }
+
+ 4： RxJava 核心
+   线程的转换
+   定时延时实现某个功能
+   队列方式实现任务

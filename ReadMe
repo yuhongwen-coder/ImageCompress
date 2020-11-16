@@ -62,7 +62,7 @@
 
  4: 而在的项目中我经常遇到这样的一个需求:如果用户上传了头像就显示圆形头像，如果没有上传头像就在圆形背景上显示文字。或者是直接在圆形头像上添加文字
      https://blog.csdn.net/ys408973279/article/details/50350313/
-
+     https://github.com/CoolThink/CircleTextImageView
 
    将 RippleView 和 ImageView 写成一个自定义控件
 4： 线程池实现
