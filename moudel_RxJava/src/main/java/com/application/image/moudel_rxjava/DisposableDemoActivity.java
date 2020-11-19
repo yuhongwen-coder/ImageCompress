@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
@@ -24,6 +25,7 @@ public class DisposableDemoActivity extends AppCompatActivity {
 
     private Disposable disposable;
     private Disposable delayDisposable;
+    private Disposable taskDp;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,7 +72,7 @@ public class DisposableDemoActivity extends AppCompatActivity {
         }
         delayDisposable = Observable.timer(2,TimeUnit.MINUTES)
                 .observeOn(Schedulers.io())
-                .observeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<Long>() {
                     @Override
                     public void accept(Long aLong) throws Exception {
@@ -78,4 +80,23 @@ public class DisposableDemoActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
+    public void pollTask(String taskId) {
+        disposeTask();
+        taskDp = Observable.interval(60, TimeUnit.SECONDS).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
+            @Override
+            public void accept(Long aLong) throws Exception {
+            }
+        });
+    }
+
+    private void disposeTask() {
+        if (taskDp != null && !taskDp.isDisposed()) {
+            taskDp.dispose();
+        }
+    }
+
+
+
 }

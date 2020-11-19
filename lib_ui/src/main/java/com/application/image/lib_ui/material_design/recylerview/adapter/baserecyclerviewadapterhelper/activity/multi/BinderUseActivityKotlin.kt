@@ -8,11 +8,13 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.application.image.lib_ui.R
+import com.application.image.lib_ui.databinding.ItemMovieBinding
 import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.base.BaseActivity
-import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.entity.Movie
-import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.entity.MoviePresenter
-import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.entity.Video
+import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.entity.*
 import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.BaseBinderAdapter
+import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.binder.QuickItemBinder
+import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.binder.QuickViewBindingItemBinder
+import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.lib.viewholder.BaseViewHolder
 import com.application.image.lib_ui.material_design.recylerview.adapter.baserecyclerviewadapterhelper.utils.Tips
 
 
