@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".material_design.recylerview.multi_adapter.ChatMessageActivity">
+
+    <RelativeLayout
+        android:id="@+id/iv_iv_up_arrow_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:id="@+id/iv_iv_up_arrow"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/icon_up_arrow"/>
+    </RelativeLayout>
+</LinearLayout>

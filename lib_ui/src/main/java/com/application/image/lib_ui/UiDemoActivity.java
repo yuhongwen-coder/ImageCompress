@@ -11,6 +11,8 @@ import com.application.image.lib_ui.material_design.custom.CustomViewActivity;
 import com.application.image.lib_ui.material_design.dialog.DialogActivity;
 import com.application.image.lib_ui.material_design.popupwindow.PopupWindowDemoActivity;
 import com.application.image.lib_ui.material_design.recylerview.RecylerViewTabActivity;
+import com.application.image.lib_ui.material_design.recylerview.multi_adapter.ChatMessageActivity;
+import com.application.image.lib_ui.material_design.recylerview.multi_adapter.ChatMessageActivityCopy;
 import com.application.image.lib_ui.material_design.swip.SwipeRefreshLayoutActivity;
 import com.application.image.lib_ui.material_design.viewpager.ViewPagerDemoActivity;
 
@@ -29,6 +31,7 @@ public class UiDemoActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.popupwindow_demo).setOnClickListener(this);
         findViewById(R.id.dialogfragment_demo).setOnClickListener(this);
         findViewById(R.id.custom_view_demo).setOnClickListener(this);
+        findViewById(R.id.multi_recylerview_adapter).setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +50,8 @@ public class UiDemoActivity extends AppCompatActivity implements View.OnClickLis
             intent.setClass(this, DialogActivity.class);
         } else if (id == R.id.custom_view_demo) {
             intent.setClass(this, CustomViewActivity.class);
+        } else if (id == R.id.multi_recylerview_adapter) {
+            intent.setClass(this, ChatMessageActivityCopy.class);
         }
         startActivity(intent);
     }

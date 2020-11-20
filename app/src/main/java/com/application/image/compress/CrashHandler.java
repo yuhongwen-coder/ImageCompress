@@ -173,7 +173,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             long timestamp = System.currentTimeMillis();
             String time = formatter.format(new Date());
             String versionName = infos.get(VERSION_NAME);
-            String appName = "riskinterception";
+            String appName = "github";
             String fileName = "crash--" + versionName + "--" + time + "-" + timestamp + ".log";
             if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
                 String path = "/sdcard/"+ appName + "/";

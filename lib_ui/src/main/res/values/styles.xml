@@ -112,4 +112,9 @@
         <item name="android:layout_marginBottom">10dp</item>
     </style>
 
+    <style name="BottomToTopAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_bottom_out</item>
+    </style>
+
 </resources>

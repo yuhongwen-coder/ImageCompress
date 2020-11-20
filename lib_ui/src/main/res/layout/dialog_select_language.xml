@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+
+    <FrameLayout
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_tab"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_contryList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+        <com.application.image.lib_ui.material_design.recylerview.multi_adapter.view.IndexBar
+            android:id="@+id/indexBar"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:paddingTop="45dp"
+            app:indexBarPressBackground="#00000000"
+            app:indexBarTextSize="26sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvSideBarHint"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="48sp"
+            android:visibility="gone"
+            tools:text="A"
+            tools:visibility="visible"/>
+
+    </FrameLayout>
+
+    <ImageView
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="36dp"
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_home"/>
+
+    <LinearLayout
+        android:id="@+id/ll_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_origin"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_bt_left_corner"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.application.image.lib_ui.material_design.recylerview.multi_adapter.view.RoundedImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="fitXY"
+                android:id="@+id/origin_country_icon"
+                android:src="@drawable/default_icon"
+                app:riv_oval="true"/>
+
+            <MarqueeTextView
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:singleLine="true"
+                android:gravity="center"
+                android:id="@+id/tv_origin"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:layout_height="wrap_content"
+                android:text="@string/chinese"
+                android:textColor="@color/color_ffffff"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_target"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_bt_right_corner_unselet"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+
+            <com.application.image.lib_ui.material_design.recylerview.multi_adapter.view.RoundedImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="fitXY"
+                android:id="@+id/target_country_icon"
+                android:src="@drawable/default_icon"
+                app:riv_oval="true"/>
+
+            <MarqueeTextView
+                android:layout_marginRight="8dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:gravity="center"
+                android:id="@+id/tv_target"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/english"
+                android:textColor="@color/color_ffffff"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

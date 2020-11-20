@@ -5,47 +5,18 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:layout_width="225px"
-        android:layout_height="225px">
-        <!--中心imageView-->
-        <ImageView
-            android:id="@+id/iv_wave"
-            android:layout_width="180px"
-            android:layout_height="180px"
-            android:layout_gravity="center"
-            android:background="@drawable/shape_circle" />
-        <!--中间的imageView-->
-        <ImageView
-            android:id="@+id/iv_wave_1"
-            android:layout_width="150px"
-            android:layout_height="150px"
-            android:layout_gravity="center"
-            android:background="@drawable/shape_circle1" />
-        <!--最外层imageView-->
-        <ImageView
-            android:id="@+id/iv_wave_2"
-            android:layout_width="120px"
-            android:layout_height="120px"
-            android:layout_gravity="center"
-            android:background="@drawable/shape_circle2"
-            android:scaleType="center" />
-
-        <ImageView
-            android:layout_width="120px"
-            android:layout_height="120px"
-            android:layout_gravity="center"
-            android:scaleType="center"
-            android:src="@drawable/ic_mic1" />
-    </FrameLayout>
+    <WaveFrameLayout
+        android:id="@+id/fl_wave_view"
+        android:layout_width="170dp"
+        android:layout_height="170dp"/>
 
     <TextView
         android:id="@+id/tv_mic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4px"
+        android:layout_marginTop="3dp"
         android:gravity="center"
-        android:text="请点击后继续说话"
-        android:textColor="@color/text_1"
+        android:text="请点击后说话"
+        android:textColor="@color/break11"
         android:textSize="26sp" />
 </LinearLayout>

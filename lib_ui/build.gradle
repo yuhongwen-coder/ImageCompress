@@ -1,7 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 30
@@ -28,9 +25,6 @@ android {
         enabled = true
     }
 
-    kapt {
-        generateStubs = true
-    }
 }
 
 dependencies {
@@ -50,13 +44,13 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.12@jar'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1@aar'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     implementation files('libs/material-spinner-1.0.5.aar')
+    implementation 'com.github.promeg:tinypinyin:1.0.0' // ~80KB
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'com.google.android.material:material:1.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.kyleduo.switchbutton:library:2.0.0'
     implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
-    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
 }

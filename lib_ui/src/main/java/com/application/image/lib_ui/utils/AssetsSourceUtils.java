@@ -17,7 +17,7 @@ public class AssetsSourceUtils {
     private static Application context;
     private static final String TAG = "LoadAssetsResUtils";
 
-    private static Application getApplication() {
+    public static Application getApplication() {
         try {
             Class<?> activityThread = Class.forName("android.app.ActivityThread");
             Object thread = activityThread.getMethod("currentActivityThread").invoke(null);

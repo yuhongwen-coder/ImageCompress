@@ -38,9 +38,9 @@
 
     <color name="bg_main">#2d3448</color>
     <color name="bg_main_title">#373f56</color>
-
-
-
+    <color name="blue">#3aa2fe</color>
+    <color name="color_C3C3C3">#C3C3C3</color>
+    <color name="transparents">#00000000</color>
     <color name="color_light_blue">#00DDB6</color>
     <color name="txt_color">#48495F</color>
     <color name="item_bg">#FFFFFF</color>
@@ -52,5 +52,10 @@
     <color name="hard_color">#48495f</color>
     <color name="clickspan_color">#00ddb6</color>
     <color name="dull_blue">#3B4BBF</color>
+    <color name="gray1">#727272</color>
+    <color name="white_color">#FFFFFF</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_ffffff">#ffffff</color>
+
 
 </resources>

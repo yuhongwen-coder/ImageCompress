@@ -32,6 +32,15 @@
         <attr name="cIsAlpha" format="boolean"/>
         <attr name="background" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="arc_view">
+        <attr name="arc_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="IndexBar">
+        <attr name="indexBarTextSize" format="dimension" />
+        <attr name="indexBarPressBackground" format="color" />
+    </declare-styleable>
     <declare-styleable name="RoundedImageView">
         <attr name="riv_corner_radius" format="dimension" />
         <attr name="riv_corner_radius_top_left" format="dimension" />
@@ -60,7 +69,34 @@
         </attr>
     </declare-styleable>
 
-    <declare-styleable name="arc_view">
-        <attr name="arc_color" format="color"/>
+    <declare-styleable name="MarqueeViewStyle">
+        <attr name="mvInterval" format="integer|reference" />
+        <attr name="mvAnimDuration" format="integer|reference" />
+        <attr name="mvTextSize" format="dimension|reference" />
+        <attr name="mvTextColor" format="color|reference" />
+        <attr name="mvSingleLine" format="boolean" />
+        <attr name="mvFont" format="reference" />
+        <attr name="mvGravity">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="mvDirection">
+            <enum name="bottom_to_top" value="0" />
+            <enum name="top_to_bottom" value="1" />
+            <enum name="right_to_left" value="2" />
+            <enum name="left_to_right" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CountryIcon">
+        <attr name="citv_border_width" format="dimension" />
+        <attr name="citv_border_color" format="color" />
+        <attr name="citv_border_overlay" format="boolean" />
+        <attr name="citv_fill_color" format="color" />
+        <attr name="citv_text_text" format="string"/>
+        <attr name="citv_text_color" format="color"/>
+        <attr name="citv_text_size" format="dimension"/>
+        <attr name="citv_text_padding" format="dimension"/>
     </declare-styleable>
 </resources>
