@@ -1,0 +1,35 @@
+20201119
+1: 上午分析 翻译问题：适当给别人压力，但是一定要想清楚自己是不是没问题，自己是否做好了准备，别最后发现是自己的问题
+1-1 翻译识别问内容不准
+1-2 翻译识别没有回调结果-----自己在页面做超时，不依赖翻译sdk的超时。通过Rxjava Dispose实现
+1-3 翻译屏蔽一些造成录音挂掉的问题
+
+2：修改bug 单
+2-1: 充电逻辑-----》构造json结构，通过Map装相关字段和字段对应得值，在通过JSon传递
+     Map<Stirng,String> chargeMap = new HashMap();
+     chargeMap.put("curBat","10");
+     chargeMap.put("curIsCharging","true");
+     String chargeJson = new Gson().fromJson(chargeMap)
+
+     结果
+     ------> {"curBat":"10","curIsCharge":"true"}
+    避免在传输简单的数据时候，还需要构造 Mode对象，实际上，后台服务器也是通过这种方式，来构造Json的
+    如果Json数据结构复杂一点，我们可以在套一层Map. Map套Map , List 套Map都是有可能的
+
+3：平板相关问题
+3-1 Netty 服务端关闭 ：拒绝连接
+3-2 Netty服务端响应有其他客户端连接
+3-3 Netty服务端的ip 和 客户端要连接的ip 不是一个
+
+4：Handler 相关问题
+4-1：Handler 与之绑定的线程 Looper。
+4-2 Handler构造函数传入 Handler.CallBack接口，在Handler.sendMessage() 之后，Handler收到消息可以直接
+    在 handleMessage()中回调
+4-3 Handler.post(new Runnable()) 也是一个发送消息的
+
+4-4 最重要的一点就是：Handler.sendMessage()消息之后，后面的代码就执行了，然后在接着执行message收到消息的
+    回调。那么要保证后面的代码在 messages收到消息之后在执行，Handler发送消息后就要阻塞后面的代码，Handler
+    收到消息之后，就要唤醒后面的代码。(同步耗时操作)
+4-4-1 ：
+    join()
+    countDownLatch

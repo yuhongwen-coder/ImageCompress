@@ -45,3 +45,10 @@
   5-1 ： 没有设置 LayoutManager
   5-2 : getCount() 函数等于0
 
+6：自定义Ui显示不出来
+  6-1 ：onDraw()函数的尺寸，小于 在Xml 中配置的尺寸
+  6-2  onDraw（）函数怎么得到这个 控件在xml 中的尺寸，通过 onMeasured()函数绘制完毕后可以，getWidth()得到
+  6-3 onMeasured()函数要主要测量模式是：wrap-content 就要设置最小的尺寸，match_parent 可以不用
+  6-4：onDraw()函数不能改变控件绘制的颜色，就要考虑颜色可能不是 Rgb 值了。
+
+
