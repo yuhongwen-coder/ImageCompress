@@ -1,4 +1,20 @@
 1：Adapter适配的三个控件
-1-1 Adapter适配RecylerView
-1-2 Adapter适配 ViewPager
+1-1 Adapter适配RecylerView的 PagedListAdapter extends RecyclerView.Adapter
+
+1-2 Adapter适配 ViewPager的 FragmentPagerAdapter extends PagerAdapter
+
+1-2-1 ： ViewPager里面装的是  Fragment ，当Viewpager 实例化第一个位置数据Fragment 时，Fragment按照正常的流程加载自身的View
+
+1-2-2: 那么Fragmet什么时机调用了？ （getItem() 什么时候调用，调用的时机是啥 ？ ）
+       只要适配器需要一个片段并且该片段不存在，就会调用 getItem。
+       如果FragmentManager中已经存在该片段，则无需实例化它，也不需要调用getItem。
+
+       要更新现有片段，您需要从 FragmentManager 或适配器中检索它，并进行相应的操作。
+
+       默认情况下，viewpager将为可见页面及其旁边的页面创建片段。 即从位置1和2处的片段开始。当您滑动到第2页时，将在位置3处创建片段，依此类推
+
+       就是说：只要Adapter构造函数运行，那么就会在FragmentManager中检索 Frgment, 然后回调 getCount() 和 getItem() 函数
+       来显示 ViewPager 的内容 比如 Fragment
+
 1-3 Adapter 适配 Fragment
+
