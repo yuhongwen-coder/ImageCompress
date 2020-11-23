@@ -18,3 +18,9 @@
 
 1-3 Adapter 适配 Fragment
 
+2：案例
+2-1 ： 直接通过ViewPager加载 Fragment, ViewPager设置成不能横向的滑动
+2-2：通过布局中 Framelayout 来加载 Fragment
+
+
+
