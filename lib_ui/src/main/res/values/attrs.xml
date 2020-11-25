@@ -99,4 +99,10 @@
         <attr name="citv_text_size" format="dimension"/>
         <attr name="citv_text_padding" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="LD_WaveView">
+        <attr name="wave_color" format="color"/>
+        <attr name="wave_color2" format="color"/>
+        <attr name="wave_circle" format="boolean"/>
+    </declare-styleable>
 </resources>

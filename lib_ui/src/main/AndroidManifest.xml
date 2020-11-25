@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name=".UiDemoActivity"/>
+            android:name=".UiCutomActivity"/>
         <activity
             android:name=".material_design.recylerview.RecylerViewTabActivity"/>
         <activity android:name=".material_design.swip.SwipeRefreshLayoutActivity"/>

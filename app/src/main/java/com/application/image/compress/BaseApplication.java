@@ -3,6 +3,7 @@ package com.application.image.compress;
 import android.app.Application;
 
 import androidx.annotation.Nullable;
+import androidx.multidex.MultiDex;
 
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.CsvFormatStrategy;
@@ -25,6 +26,7 @@ public class BaseApplication extends Application {
         initLog();
         instance = this;
         initCrashLogToFile();
+        MultiDex.install(this);
     }
 
     private void initCrashLogToFile() {

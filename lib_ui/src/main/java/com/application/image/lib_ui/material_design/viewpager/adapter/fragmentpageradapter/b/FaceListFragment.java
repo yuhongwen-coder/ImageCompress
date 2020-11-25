@@ -14,22 +14,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.application.image.lib_ui.R;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
-import com.maxvision.robot.DbControllerFactory;
-import com.maxvision.robot.db.BaseFaceListTest;
-import com.maxvision.tech.common.bigPhoto.PhotoViewerActivity;
-import com.maxvision.tech.common.utils.CustomToast;
-import com.maxvision.tech.robot.R;
-import com.maxvision.tech.robot.ui.settings.adapter.FaceListAdapter;
-import com.maxvision.tech.ros.RosSendMessage;
-import com.maxvision.tech.ros.entity.FaceUploadOrDelData;
-import com.maxvision.tech.ros.observer.ObserverHandler;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.maxvision.tech.common.bigPhoto.PhotoConfig.IMAGETYPE_LOCAL;
-import static com.maxvision.tech.common.utils.CustomToast.TIP_SUCCESS;
+
 
 
 /**
@@ -42,7 +33,7 @@ public class FaceListFragment extends Fragment implements FaceListAdapter.OnClic
     private static final int PAGE_SIZE = 20;
     private String fragmetType;
     private XRecyclerView recyclerView;
-    private List<BaseFaceListTest> faceDatas = new ArrayList<>();
+    private List<FACE_LIST_DATA_> faceDatas = new ArrayList<>();
     private int clickPosition;
     private DialogOnSureListener mDialogOnSureListener;
     private FaceListAdapter adapter;
@@ -128,16 +119,16 @@ public class FaceListFragment extends Fragment implements FaceListAdapter.OnClic
     }
 
     private void delDbFace() {
-        DbControllerFactory.getInstance().getFaceListDataController().deleteByFaceId(faceDatas.get(clickPosition).getFaceId());
-        if (getContext() == null) return;
-        ((Activity)getContext()).runOnUiThread(() -> {
-            faceDatas.remove(clickPosition);
-            adapter.notifyDataSetChanged();
-            CustomToast.toastLong(TIP_SUCCESS, getString(R.string.delete_success));
-            if (mDialogOnSureListener != null) {
-                mDialogOnSureListener.diss();
-            }
-        });
+//        DbControllerFactory.getInstance().getFaceListDataController().deleteByFaceId(faceDatas.get(clickPosition).getFaceId());
+//        if (getContext() == null) return;
+//        ((Activity)getContext()).runOnUiThread(() -> {
+//            faceDatas.remove(clickPosition);
+//            adapter.notifyDataSetChanged();
+//            CustomToast.toastLong(TIP_SUCCESS, getString(R.string.delete_success));
+//            if (mDialogOnSureListener != null) {
+//                mDialogOnSureListener.diss();
+//            }
+//        });
     }
 
     /**
@@ -149,33 +140,33 @@ public class FaceListFragment extends Fragment implements FaceListAdapter.OnClic
         if (mDialogOnSureListener != null) {
             mDialogOnSureListener.showDialog(2);
         }
-        RosSendMessage.getInstance().deleteFace(faceDatas.get(position).getFaceId(), new ObserverHandler<FaceUploadOrDelData>() {
-            @Override
-            public void onSuccess(FaceUploadOrDelData data) {
-                delDbFace();
-            }
-
-            @Override
-            public void onError(String code) {
-                CustomToast.toastLong(TIP_SUCCESS, getString(R.string.delete_fail));
-            }
-        });
+//        RosSendMessage.getInstance().deleteFace(faceDatas.get(position).getFaceId(), new ObserverHandler<FaceUploadOrDelData>() {
+//            @Override
+//            public void onSuccess(FaceUploadOrDelData data) {
+//                delDbFace();
+//            }
+//
+//            @Override
+//            public void onError(String code) {
+//                CustomToast.toastLong(TIP_SUCCESS, getString(R.string.delete_fail));
+//            }
+//        });
     }
 
     private void updateFaceView() {
-        if(getContext() == null) return;
-        ((Activity)getContext()).runOnUiThread(() -> {
-            for (int i =0;i<faceDatas.size();i++) {
-                if (i == clickUploadPosition) {
-                    // 更新上传后的图标
-                    faceDatas.get(i).setUploadState(FACE_HAS_UPLOAD);
-                    DbControllerFactory.getInstance().getFaceListDataController()
-                            .updataByFaceId(faceDatas.get(i).getFaceId(),FACE_HAS_UPLOAD);
-                    adapter.notifyDataSetChanged();
-                    break;
-                }
-            }
-        });
+//        if(getContext() == null) return;
+//        ((Activity)getContext()).runOnUiThread(() -> {
+//            for (int i =0;i<faceDatas.size();i++) {
+//                if (i == clickUploadPosition) {
+//                    // 更新上传后的图标
+//                    faceDatas.get(i).setUploadState(FACE_HAS_UPLOAD);
+////                    DbControllerFactory.getInstance().getFaceListDataController()
+////                            .updataByFaceId(faceDatas.get(i).getFaceId(),FACE_HAS_UPLOAD);
+//                    adapter.notifyDataSetChanged();
+//                    break;
+//                }
+//            }
+//        });
     }
 
     /**
@@ -188,21 +179,21 @@ public class FaceListFragment extends Fragment implements FaceListAdapter.OnClic
         if (mDialogOnSureListener != null) {
             mDialogOnSureListener.showDialog(5);
         }
-        RosSendMessage.getInstance().uploadFace(faceDatas.get(position).getFaceId(), faceDatas.get(position).getImagePath(),
-                new ObserverHandler<FaceUploadOrDelData>() {
-
-            @Override
-            public void onSuccess(FaceUploadOrDelData data) {
-                Log.e("yhw","onUpload success");
-                updateFaceView();
-            }
-
-            @Override
-            public void onError(String code) {
-                Log.e("yhw","onUpload fail");
-                CustomToast.toastLong(TIP_SUCCESS, getString(R.string.text_upload_fail));
-            }
-        });
+//        RosSendMessage.getInstance().uploadFace(faceDatas.get(position).getFaceId(), faceDatas.get(position).getImagePath(),
+//                new ObserverHandler<FaceUploadOrDelData>() {
+//
+//            @Override
+//            public void onSuccess(FaceUploadOrDelData data) {
+//                Log.e("yhw","onUpload success");
+//                updateFaceView();
+//            }
+//
+//            @Override
+//            public void onError(String code) {
+//                Log.e("yhw","onUpload fail");
+//                CustomToast.toastLong(TIP_SUCCESS, getString(R.string.text_upload_fail));
+//            }
+//        });
     }
 
     /**
@@ -215,22 +206,22 @@ public class FaceListFragment extends Fragment implements FaceListAdapter.OnClic
         if (mContext != null) {
             ArrayList<String> imageList = new ArrayList<>();
             imageList.add(imageUrl);
-            PhotoViewerActivity.startPhotoViewerActivity(mContext, imageList, 0, IMAGETYPE_LOCAL);
+//            PhotoViewerActivity.startPhotoViewerActivity(mContext, imageList, 0, IMAGETYPE_LOCAL);
         }
     }
 
     private void getFaceData() {
-        DbControllerFactory.getInstance().getFaceListDataController().queryPageData(page, PAGE_SIZE, fragmetType, (state, object) -> {
-            if (page == 1) {
-                faceDatas.clear();
-            }
-            faceDatas.addAll(object);
-            if(object.size() == 0){
-                recyclerView.setLoadingMoreEnabled(false);
-            }
-            adapter.notifyDataSetChanged();
-            initialization();
-        });
+//        DbControllerFactory.getInstance().getFaceListDataController().queryPageData(page, PAGE_SIZE, fragmetType, (state, object) -> {
+//            if (page == 1) {
+//                faceDatas.clear();
+//            }
+//            faceDatas.addAll(object);
+//            if(object.size() == 0){
+//                recyclerView.setLoadingMoreEnabled(false);
+//            }
+//            adapter.notifyDataSetChanged();
+//            initialization();
+//        });
     }
 
     private void initialization(){
@@ -259,10 +250,10 @@ public class FaceListFragment extends Fragment implements FaceListAdapter.OnClic
     }
 
     public void delFaceAll(){
-        if (getContext() == null) return;
-        ((Activity)getContext()).runOnUiThread(() -> {
-            faceDatas.clear();
-            adapter.notifyDataSetChanged();
-        });
+//        if (getContext() == null) return;
+//        ((Activity)getContext()).runOnUiThread(() -> {
+//            faceDatas.clear();
+//            adapter.notifyDataSetChanged();
+//        });
     }
 }

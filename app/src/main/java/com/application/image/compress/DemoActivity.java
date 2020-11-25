@@ -1,14 +1,12 @@
 package com.application.image.compress;
 
 import android.Manifest;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,14 +15,10 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.application.image.lib_download.test.DownLoadMoudelActivity;
-import com.application.image.lib_download.test.ListActivity;
-import com.application.image.lib_download.test.MainActivity;
 import com.application.image.lib_log.LogUtilsActivity;
 import com.application.image.lib_thread.TestHandlerDemoActivity;
-import com.application.image.lib_ui.UiDemoActivity;
+import com.application.image.lib_ui.UiCutomActivity;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -147,7 +141,7 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
 //            intent.setClassName(this,"com.application.image.lib_thread.TestHandlerDemoActivity");
             intent.setClass(this, TestHandlerDemoActivity.class);
         } else if (id == R.id.jump_ui) {
-            intent.setClass(this, UiDemoActivity.class);
+            intent.setClass(this, UiCutomActivity.class);
         }
         startActivity(intent);
     }

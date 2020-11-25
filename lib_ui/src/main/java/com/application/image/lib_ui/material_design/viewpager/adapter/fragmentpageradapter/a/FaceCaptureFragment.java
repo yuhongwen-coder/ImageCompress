@@ -7,13 +7,8 @@ import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.maxvision.tech.robot.GlobalStates;
-import com.maxvision.tech.robot.R;
-import com.maxvision.tech.robot.adapter.FaceCaptureAdapter;
-import com.maxvision.tech.robot.db.alarm.FaceAlarm;
-import com.maxvision.tech.robot.ui.model.AlarmTableModel;
+import com.application.image.lib_ui.R;
 
-import butterknife.BindView;
 
 /**
  * author: glc.
@@ -44,9 +39,14 @@ public class FaceCaptureFragment extends BaseFragment {
         this.mContext = context;
         this.mAlarmTableModel = alarmTableModel;
         rlFaceCapature.setLayoutManager(new LinearLayoutManager(mContext));
-        FaceCaptureAdapter itemAdapter = new FaceCaptureAdapter(mContext);
-        Observer<PagedList<FaceAlarm>> observer = itemAdapter::submitList;
-        mAlarmTableModel.getFaceCaptureData(GlobalStates.mRobotSN).observe(this,observer);
+        final FaceCaptureAdapter itemAdapter = new FaceCaptureAdapter(mContext);
+        Observer<PagedList<FaceAlarm>> observer = new Observer<PagedList<FaceAlarm>>() {
+            @Override
+            public void onChanged(PagedList<FaceAlarm> pagedList) {
+                itemAdapter.submitList(pagedList);
+            }
+        };
+//        mAlarmTableModel.getFaceCaptureData(GlobalStates.mRobotSN).observe(this,observer);
         rlFaceCapature.setAdapter(itemAdapter);
 
     }

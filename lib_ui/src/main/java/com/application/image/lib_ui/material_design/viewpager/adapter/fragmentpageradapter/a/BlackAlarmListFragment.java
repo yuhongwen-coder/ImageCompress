@@ -7,13 +7,8 @@ import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.maxvision.tech.robot.GlobalStates;
-import com.maxvision.tech.robot.R;
-import com.maxvision.tech.robot.adapter.BlackListAdapter;
-import com.maxvision.tech.robot.db.alarm.BlackListAlarm;
-import com.maxvision.tech.robot.ui.model.AlarmTableModel;
+import com.application.image.lib_ui.R;
 
-import butterknife.BindView;
 
 /**
  * author: glc.
@@ -22,7 +17,6 @@ import butterknife.BindView;
  */
 public class BlackAlarmListFragment extends BaseFragment {
 
-    @BindView(R.id.rl_black_view)
     RecyclerView rlBlackView;
 
     private Context mContext;
@@ -43,9 +37,9 @@ public class BlackAlarmListFragment extends BaseFragment {
         this.mContext = context;
         this.mAlarmTableModel = alarmTableModel;
         rlBlackView.setLayoutManager(new LinearLayoutManager(mContext));
-        BlackListAdapter listAdapter = new BlackListAdapter(mContext);
-        Observer<PagedList<BlackListAlarm>> observer = listAdapter::submitList;
-        mAlarmTableModel.getBlacklistData(GlobalStates.mRobotSN).observe(this,observer);
-        rlBlackView.setAdapter(listAdapter);
+//        BlackListAdapter listAdapter = new BlackListAdapter(mContext);
+//        Observer<PagedList<BlackListAlarm>> observer = listAdapter::submitList;
+//        mAlarmTableModel.getBlacklistData(GlobalStates.mRobotSN).observe(this,observer);
+//        rlBlackView.setAdapter(listAdapter);
     }
 }
