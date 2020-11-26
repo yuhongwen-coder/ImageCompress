@@ -49,7 +49,7 @@ public class UiCutomActivity extends AppCompatActivity implements View.OnClickLi
         } else if (id ==R.id.dialogfragment_demo) {
             intent.setClass(this, DialogActivity.class);
         } else if (id == R.id.custom_view_demo) {
-            intent.setClass(this, CustomViewActivity.class);
+            intent.setClass(this, CustomViewActivity.class); // 自定义View控件
         } else if (id == R.id.multi_recylerview_adapter) {
             intent.setClass(this, ChatMessageActivityCopy.class);
         }

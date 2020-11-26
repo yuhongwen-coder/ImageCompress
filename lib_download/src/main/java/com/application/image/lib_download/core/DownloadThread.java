@@ -1,5 +1,7 @@
 package com.application.image.lib_download.core;
 
+import android.util.Log;
+
 import com.application.image.lib_download.DownloadConfig;
 import com.application.image.lib_download.entity.DownloadEntry;
 import com.application.image.lib_download.utils.MyConstant;
@@ -54,6 +56,7 @@ public class DownloadThread implements Runnable{
 
 	@Override
 	public void run() {
+		Log.e("文件下载","isSingleDownload = " + isSingleDownload);
 		status = DownloadEntry.DownloadStatus.downloading;
 		HttpURLConnection connection = null;
 		try {

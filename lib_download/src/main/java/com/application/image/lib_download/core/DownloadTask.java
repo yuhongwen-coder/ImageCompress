@@ -145,6 +145,7 @@ public class DownloadTask implements ConnectThread.ConnectListener, DownloadThre
 				endPos = (i + 1) * block - 1;
 			}
 			if(startPos < endPos){
+				// 持续下载
 				downloadThreads[i] = new DownloadThread(entry.url, i, startPos, endPos, this);
 				downloadStatus[i] = DownloadEntry.DownloadStatus.downloading;
 				mExecutor.execute(downloadThreads[i]);

@@ -82,7 +82,6 @@ public class LD_WaveView extends View {
             mLeftWaveMoveLength = 0;
         }
         invalidate();
-
     }
 
 
@@ -98,10 +97,8 @@ public class LD_WaveView extends View {
 
     public LD_WaveView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
         getAttr(context, attrs, defStyleAttr);
         init();
-
     }
 
     /**
@@ -158,7 +155,6 @@ public class LD_WaveView extends View {
 
     private void getAttr(Context context, AttributeSet attrs, int defStyle) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.LD_WaveView, defStyle, 0);
-
         mWaveColor = a.getColor(R.styleable.LD_WaveView_wave_color, Color.RED);
         mWaveColor2 = a.getColor(R.styleable.LD_WaveView_wave_color2, Color.RED);
         isCircle = a.getBoolean(R.styleable.LD_WaveView_wave_circle, false);

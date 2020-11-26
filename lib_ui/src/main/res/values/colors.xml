@@ -60,4 +60,6 @@
     <color name="white_transparent90">#19FFFFFF</color>
     <color name="text_yellow">#E8B038</color>olor>
     <color name="zz_white">#FFFFFF</color>
+    <color name="wave_color2">#66434e6c</color>
+    <color name="wave_color">#434e6c</color>
 </resources>
