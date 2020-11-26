@@ -20,11 +20,11 @@ public class EnumDemo {
 
         public static FavlorType valueof(String value) {
             FavlorType type;
-            if (TextUtils.equals(value,"alpha")) {
+            if (TextUtils.equals(value, "alpha")) {
                 type = ALPHA;
-            } else if (TextUtils.equals(value,"tjfyhg")) {
+            } else if (TextUtils.equals(value, "tjfyhg")) {
                 type = TJFYHG;
-            } else if (TextUtils.equals(value,"TJXYHG")) {
+            } else if (TextUtils.equals(value, "TJXYHG")) {
                 type = TJXYHG;
             } else {
                 type = ALPHA;
