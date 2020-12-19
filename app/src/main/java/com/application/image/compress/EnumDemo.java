@@ -3,7 +3,7 @@ package com.application.image.compress;
 import android.text.TextUtils;
 
 /**
- * Created by yuhongwen
+ * Created by yuhongwenPointWave
  * on 2020/11/26
  */
 public class EnumDemo {

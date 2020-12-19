@@ -1,0 +1,81 @@
+1 : 继续熟悉实践 线程之间数据同步问题 : 主要是为了线程之间数据同步问题，在 Timer里面将线程切换到主线程
+     private void configTextDelayTime(TextView delayTextView,String locationName) {
+            delayTime = INIT_DELAY_TIME;
+            if (timer != null) {
+                timer.cancel();
+                timer = null;
+            }
+            timer = new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    ZnxyWindowActivity.this.runOnUiThread(() -> {
+                        if (delayTime <= 0) {
+                            clearTime();
+                            delayDialog.dismiss();
+                            ZnxyWindowActivity.this.configDelayView(delayTextView, locationName);
+                        }
+                        showDelayDialog(delayTextView,locationName);
+                        delayTime--;
+                    });
+                }
+            },0,1000);
+        }
+
+
+2： 请再次熟悉下注解和 EventBus 使用
+    https://www.jianshu.com/p/76c7bf5da3c8
+    说到EventBus就不得不提下观察者模式，这个设计模式相信大家都很熟悉了，在这个模式里有2个方面，
+    一个是被观察者，也就是产生事件的一方，另一个是观察者，也就是消费（响应）事件的一方，观察者模式做的事情就是将这2者联系起来，
+    好实现当某个事件发生时，对此事件的感兴趣的观察者能持续得到通知，这样就建立了一种订阅的关系，当然也可以随时取消这种关系。
+    EventBus总起上来说，做的也是同样的事情，只是将这个模式更加发扬光大了，从而在使用方式上更加简单、方便。
+
+    在Android里面EventBus时常用来在各模块之间解耦，比如你有一个密码输入框的View，此View在用户输完密码的时候就自动关闭了，
+    于此同时它会post一个PwdInputDoneEvent，然后它的任务就完成了。在这个场景里我们看到，密码输入框不知道，也根本不需要知道谁会处理这个事件、怎么处理，
+    这也符合设计模式的原则：单一职责、最小知道原则。接下来可能我们有个Activity会对这个事件感兴趣，它会在收到这个事件的时候进行下一步的处理。
+    在这里View和Activity之间是互相不知道彼此的，而他们之间的这种订阅关系就是被本文的主角EventBus来维护的。可以看出EventBus既能让你的各个模块之间松散耦合，
+    同时又能高效的彼此通信。
+
+    当下在Android世界里比较知名的EventBus相关的库有2个，分别是Greenrobot EventBus和Otto Bus，接下来我们来简单对比下。
+
+    两者的订阅用法
+    两者在用法方面也是惊人的相似，以下是大体的步骤：
+
+    定义事件类；
+    在观察者（处理者）类中定义@subscribe public方法，并注册此类的对象到EventBus中；
+    在合适的地方post相应的事件；
+    最后不需要的时候，记得unregister观察者；
+    上面的步骤中，忽略了EventBus的创建过程，在Greenrobot中你可以简单的调用EventBus.getDefault()来返回一个全局公共的实例；
+    在Otto中，你需要利用单例模式创建一个全局的Bus实例，Bus对外暴露了几个公共的ctor，选择一个适合你的。
+2-1 实践：
+    威海风险拦截系统里面的实践
+
+3： TCP
+    mina-core-2.0.7.jar 使用
+
+4： 遍历map
+   //第一种：普遍使用，二次取值
+   10   System.out.println("通过Map.keySet遍历key和value：");
+   11   for (String key : map.keySet()) {
+   12    System.out.println("key= "+ key + " and value= " + map.get(key));
+   13   }
+   14
+   15   //第二种:通过Iterator迭代器遍历循环Map.entrySet().iterator();
+   16   System.out.println("通过Map.entrySet使用iterator遍历key和value：");
+   17   Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
+   18   while (it.hasNext()) {
+   19    Map.Entry<String, String> entry = it.next();
+   20    System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+   21   }
+   22
+   23   //第三种：笔者推荐，尤其是容量大时(相对来说 比2好一点 效率高)
+   24   System.out.println("通过Map.entrySet遍历key和value");
+   25   for (Map.Entry<String, String> entry : map.entrySet()) {
+   26    System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+   27   }
+   28
+   29   //第四种
+   30   System.out.println("通过Map.values()遍历所有的value，但不能遍历key");
+   31   for (String v : map.values()) {
+   32    System.out.println("value= " + v);
+   33   }
