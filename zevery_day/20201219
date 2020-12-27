@@ -1,0 +1,8 @@
+1：Activity生命周期结束
+1-1: Activity是否回调finish()函数，可以决定activity里面的变量是否回收
+1-2 ：如果Activity存在 静态的 变量，那么即使Activity被回收，静态变量的值还是会保存起来，非静态变量的值不会被保存起来
+1-3：activity 在要调用finish（）的时候会判断activity的上下文，是否存在强引用的关系，如果存在那么activity就不会被回收
+     像那种单例对象如果引用了activity的上下文，那么也会造成activity不能被回收，这个时候就需要将activity设置为软引用
+     或者弱引用
+
+2：
