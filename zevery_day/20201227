@@ -3,6 +3,7 @@
      mButtonBg.setOnTouchListener(new View.OnTouchListener() {
           @Override
           public boolean onTouch(View v, MotionEvent event) {
+
                 ToastUtils.showShortSuoping(MainActivity.this, "屏幕被锁定，页面无法切换，您可以关闭锁屏");
                 return true;
           }
