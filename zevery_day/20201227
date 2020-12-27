@@ -1,11 +1,11 @@
 1：点击拦截事件
 1-1 ：直接在布局加一层白色布局View ，然后直接拦截点击事件，不让事件往下一个节点或者兄弟节点分发
      mButtonBg.setOnTouchListener(new View.OnTouchListener() {
-                 @Override
-                 public boolean onTouch(View v, MotionEvent event) {
-                     ToastUtils.showShortSuoping(MainActivity.this, "屏幕被锁定，页面无法切换，您可以关闭锁屏");
-                     return true;
-                 }
-             });
+          @Override
+          public boolean onTouch(View v, MotionEvent event) {
+                ToastUtils.showShortSuoping(MainActivity.this, "屏幕被锁定，页面无法切换，您可以关闭锁屏");
+                return true;
+          }
+     });
 
- 2：
+2：tab + Fragment
