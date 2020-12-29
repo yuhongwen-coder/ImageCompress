@@ -13,5 +13,6 @@
         <activity android:name=".material_design.custom.CustomViewActivity"/>
         <activity android:name=".material_design.recylerview.multi_adapter.ChatMessageActivity"/>
         <activity android:name=".material_design.recylerview.multi_adapter.ChatMessageActivityCopy"/>
+        <activity android:name=".material_design.wheelview.WheelViewDemoActivity"/>
     </application>
 </manifest>

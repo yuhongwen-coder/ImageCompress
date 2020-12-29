@@ -15,6 +15,7 @@ import com.application.image.lib_ui.material_design.recylerview.multi_adapter.Ch
 import com.application.image.lib_ui.material_design.recylerview.multi_adapter.ChatMessageActivityCopy;
 import com.application.image.lib_ui.material_design.swip.SwipeRefreshLayoutActivity;
 import com.application.image.lib_ui.material_design.viewpager.ViewPagerDemoActivity;
+import com.application.image.lib_ui.material_design.wheelview.WheelViewDemoActivity;
 
 /**
  * Created by yuhongwen
@@ -32,6 +33,7 @@ public class UiCutomActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.dialogfragment_demo).setOnClickListener(this);
         findViewById(R.id.custom_view_demo).setOnClickListener(this);
         findViewById(R.id.multi_recylerview_adapter).setOnClickListener(this);
+        findViewById(R.id.wheel_view_time).setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +54,8 @@ public class UiCutomActivity extends AppCompatActivity implements View.OnClickLi
             intent.setClass(this, CustomViewActivity.class); // 自定义View控件
         } else if (id == R.id.multi_recylerview_adapter) {
             intent.setClass(this, ChatMessageActivityCopy.class);
+        } else if (id == R.id.wheel_view_time) {
+            intent.setClass(this, WheelViewDemoActivity.class);
         }
         startActivity(intent);
     }
