@@ -1,0 +1,37 @@
+1 ：弹框主题不一致，导致app在平板上表现不一致，比如华为平板（M6  SCM-W09）
+1-1
+     <!--    此样式在华为平板上不能居中并且莫名其妙有一根线-->
+        <style name="CustomDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+    <!--        <item name="android:windowIsFloating">true</item>&lt;!&ndash; 是否浮现在activity之上 &ndash;&gt;-->
+    <!--        <item name="android:windowIsTranslucent">false</item>&lt;!&ndash; 半透明 &ndash;&gt;-->
+    <!--        <item name="android:windowNoTitle">false</item>&lt;!&ndash; 无标题 &ndash;&gt;-->
+        </style>
+
+1-2 但是这样修改就没问题了
+      <!--弹窗-->
+        <style name="dialog" parent="@android:style/Theme.Dialog">
+            <item name="android:windowFrame">@null</item>
+            <!--边框-->
+            <item name="android:windowIsFloating">true</item>
+            <!--是否浮现在activity之上-->
+            <item name="android:windowIsTranslucent">false</item>
+            <!--半透明-->
+            <item name="android:windowNoTitle">true</item>
+            <!--无标题-->
+            <item name="android:windowBackground">@android:color/transparent</item>
+            <!--背景透明-->
+            <item name="android:backgroundDimEnabled">true</item>
+            <!--模糊-->
+        </style>
+
+2： 开源项目 FlycoTabLayout列表应用
+2-1 MainActivity + SegmentTabLayout + ContainerViewId
+
+2-2      /** 初始化fragments */
+        private void initFragments() {
+            for (Fragment fragment : mFragments) {
+                // 核心代码：mContainerViewId就是 FrameLayout , FrameLayout 容纳Fragment
+                mFragmentManager.beginTransaction().add(mContainerViewId, fragment).hide(fragment).commit();
+            }
+            setFragments(0);
+        }
