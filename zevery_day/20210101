@@ -24,7 +24,7 @@
             <!--模糊-->
         </style>
 
-2： 开源项目 FlycoTabLayout列表应用
+2： 开源项目 FlycoTabLayout 列表应用
 2-1 MainActivity + SegmentTabLayout + ContainerViewId
 
 2-2      /** 初始化fragments */
