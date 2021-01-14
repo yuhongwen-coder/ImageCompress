@@ -1,0 +1,17 @@
+1 : toString的理解
+1-1 ： JsonObject ----》转变成String ,可以直接 JsonObject.toString(),直接变成 JsonString , 因为JsonObject的toString()函数
+       已经将其变成了 JsonString的格式
+
+2 ：三方框架 org.greenrobot.EventBus 使用
+2-1: 先在需要接收的地方 注册 EventBus.getDefault().register(Object)
+2-2: 然后在消息需要发出的地方发出消息：EventBus.getDefault().post(new Event())
+2-3: 然后在需要接受消息的地方添加注解 @Subscribe(threadMode = ThreadMode.MAIN)并且定义public 函数
+2-4：最后在不需要接收消息的时候，注销即可 ：EventBus.getDefault().unregister(Object)
+
+3: 集合数据结构
+3-1：Set集合可以保持里面元素单一性，一般使用 HashSet这个实现类
+3-2：替换集合中某个元素：List.set(i,Object)
+
+4: 定时轮询可能会影响Netty性能
+
+5： 代码结构整理和设计
