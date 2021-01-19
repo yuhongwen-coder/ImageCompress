@@ -2,7 +2,7 @@
 1-1 ： JsonObject ----》转变成String ,可以直接 JsonObject.toString(),直接变成 JsonString , 因为JsonObject的toString()函数
        已经将其变成了 JsonString的格式
 
-2 ：三方框架 org.greenrobot.EventBus 使用
+2 ：三方框架 org.greenrobot.EventBus 使用(这个在替换接口回调的时候很好用)
 2-1: 先在需要接收的地方 注册 EventBus.getDefault().register(Object)
 2-2: 然后在消息需要发出的地方发出消息：EventBus.getDefault().post(new Event())
 2-3: 然后在需要接受消息的地方添加注解 @Subscribe(threadMode = ThreadMode.MAIN)并且定义public 函数
@@ -15,3 +15,35 @@
 4: 定时轮询可能会影响Netty性能
 
 5： 代码结构整理和设计
+5-1 注意借鉴这个代码套路：单独新建一个java类这个就是 MyRunnable extends Runnable
+
+6：WindowManager.addView()来实现页面覆盖一个View
+  public void showXdzy() {
+          view = View.inflate(BaseApplication.getInstance(), R.layout.layout_xdzy,null);
+          TextView tvPause = view.findViewById(R.id.tv_pause);
+          TextView tvXdzyName = view.findViewById(R.id.tv_xdzy_name);
+          if (robotTaskListData != null)
+          tvXdzyName.setText(String.format(AppUtils.getApp().getString(R.string.text_xdzy_execute_name),robotTaskListData.getName()));
+          //窗口管理器
+          mWindowManager = ((WindowManager)BaseApplication.getInstance().getSystemService(Context.WINDOW_SERVICE));
+          //布局参数
+          WindowManager.LayoutParams mParams = new WindowManager.LayoutParams();
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+              mParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+          } else {
+              mParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+          }
+          mParams.format = PixelFormat.RGBA_8888;
+          mParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+          mParams.gravity = Gravity.LEFT | Gravity.TOP;
+          mParams.width = 1920;
+          mParams.height = 1080;
+          UiUtils.runOnUiThread(() -> {
+              mWindowManager.addView(view,mParams);
+              view.setVisibility(View.VISIBLE);
+          });
+          tvPause.setOnClickListener(v -> {
+              hideXdzy();
+              breakXdzy();
+          });
+  }
