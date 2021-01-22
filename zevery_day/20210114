@@ -7,6 +7,7 @@
 2-2: 然后在消息需要发出的地方发出消息：EventBus.getDefault().post(new Event())
 2-3: 然后在需要接受消息的地方添加注解 @Subscribe(threadMode = ThreadMode.MAIN)并且定义public 函数
 2-4：最后在不需要接收消息的时候，注销即可 ：EventBus.getDefault().unregister(Object)
+2-5 ：https://juejin.cn/post/6900441846632169486
 
 3: 集合数据结构
 3-1：Set集合可以保持里面元素单一性，一般使用 HashSet这个实现类
